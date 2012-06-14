@@ -2,6 +2,7 @@ var connect        = require('connect'),
     express        = require('express'),
     connectTimeout = require('connect-timeout'),
     mongoose       = require('mongoose'),
+	gzippo         = require('gzippo'),	
     utils          = require('./lib/utils'),
     EventEmitter   = require('events').EventEmitter,
     AppEmitter     = new EventEmitter(),
@@ -18,10 +19,7 @@ utils.loadConfig(__dirname + '/config', function(config) {
   app.configure(function() {
     utils.ifEnv('production', function() {
       // enable gzip compression
-      app.use(connect.compress({
-        level: 9,
-        memLevel: 9
-      }));
+      app.use(gzippo.compress());
     });
     app.use(express.favicon());
     utils.ifEnv('production', function() {

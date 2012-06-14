@@ -17,7 +17,8 @@
       "moment"          : "1.6.x",
       "mongoose"        : "2.5.x",
       "uglify-js"       : "1.2.x",
-      "underscore"      : "*"
+      "underscore"      : "*",
+	  "gzippo"			: "0.1.4"
     },
     "devDependencies": {
       "mocha"   : "1.1.x",
