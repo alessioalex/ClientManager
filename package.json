@@ -1,0 +1,32 @@
+{
+    "name"        : "ClientsApp",
+    "description" : "Backbone demo with Node.js on the backend",
+    "version"     : "0.0.1",
+    "author"      : "Alexandru Vladutu <alexandru.vladutu@gmail.com>",
+    "engines"     : {
+      "node": ">=0.6.x"
+    },
+    "dependencies": {
+      "async"           : "0.1.x",
+      "colors"          : "*",
+      "connect"         : "2.1.x",
+      "connect-timeout" : "0.0.1",
+      "connect-redis"   : "1.3.x",
+      "express"         : "2.x.x",
+      "faker"           : "https://github.com/Marak/Faker.js/tarball/master",
+      "moment"          : "1.6.x",
+      "mongoose"        : "2.5.x",
+      "uglify-js"       : "1.2.x",
+      "underscore"      : "*"
+    },
+    "devDependencies": {
+      "mocha"   : "1.1.x",
+      "should"  : "0.6.x",
+      "request" : "2.9.x"
+    },
+    "scripts": {
+      "test"        : "node_modules/.bin/mocha --ui bdd --recursive --reporter spec --timeout 10000 --slow 300",
+      "postinstall" : "jake -v || npm install jake@0.2.23 -g",
+      "start"       : "NODE_ENV=production node app.js"
+    }
+}

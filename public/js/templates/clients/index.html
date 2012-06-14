@@ -1,0 +1,40 @@
+<div class="row">
+  <div class="span12">
+
+    <div class="page-header">
+      <h1>List of clients</h1>
+    </div>
+
+    <p>
+      <table class="table">
+        <thead>
+          <tr>
+            <th><i class="icon-user"></i>Name</th>
+            <th><i class="icon-envelope"></i>Email</th>
+            <th><i class="icon-briefcase"></i>Company</th>
+            <th><i class="icon-time"></i>Born</th>
+          </tr>
+        </thead>
+        <tbody>
+        <% _.each(clients, function(client) { %>
+          <tr>
+            <td>
+              <a href="#/clients/<%- client._id %>"><%- client.name %></a>
+            </td>
+            <td>
+              <a href="mailto:<%- client.email %>"><%- client.email %></a>
+            </td>
+            <td>
+              <%- client.company %>
+            </td>
+            <td>
+              <%= moment(new Date(client.born)).format("MMMM Do YYYY") %>
+            </td>
+          </tr>
+        <% }); %>
+        </tbody>
+      </table>
+    </p>
+
+  </div>
+</div>
