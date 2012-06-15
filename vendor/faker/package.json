@@ -1,0 +1,36 @@
+{
+  "name": "Faker",
+  "description": "Generate massive amounts of fake contextual data",
+  "version": "0.5.0",
+  "author": {
+    "name": "Marak Squires",
+    "email": "marak.squires@gmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/Marak/Faker.js.git"
+  },
+  "engine": [
+    "node >=0.1.90"
+  ],
+  "main": "Faker",
+  "_npmUser": {
+    "name": "alessioalex",
+    "email": "alexandru.vladutu@gmail.com"
+  },
+  "_id": "Faker@0.5.0",
+  "dependencies": {},
+  "devDependencies": {},
+  "optionalDependencies": {},
+  "engines": {
+    "node": "*"
+  },
+  "_engineSupported": true,
+  "_npmVersion": "1.1.24",
+  "_nodeVersion": "v0.6.19",
+  "_defaultsLoaded": true,
+  "dist": {
+    "shasum": "f25195339bcca8e02e4c482d2dfe9daa1f097352"
+  },
+  "_from": "faker@https://github.com/Marak/Faker.js/tarball/master"
+}

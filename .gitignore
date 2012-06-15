@@ -1,0 +1,7 @@
+tests/
+node_modules/
+.DS_Store
+.jshintrc
+*.log
+*.swp
+*.swo
