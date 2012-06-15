@@ -14,7 +14,7 @@
  */
 var mongoose    = require('mongoose'),
     colors      = require('colors'),
-    faker       = require('faker'),
+    faker       = require('./vendor/faker'),
     log         = console.log,
     ENV         = process.env.NODE_ENV || 'development';
     JK          = {};
