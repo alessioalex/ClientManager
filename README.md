@@ -33,6 +33,11 @@ I've chosen Mocha for all tests in this project. To run unit tests & function te
 If you're testing on Windows, install Mocha globally: 'npm install mocha@1.1.0 -g' and run 'mocha --ui bdd --recursive --reporter spec --timeout 10000 --slow 300' instead.
 For client side tests, open 'http://server:port/test'.
 
+## Build
+
+I've concatenated and minified the css into a single file and the JS into 2 files: one file that contains libraries (such as jQuery, underscore etc.. including RequireJS) and another file that includes all the RequireJS modules (minified and concatenated with r.js, the RequireJS optimizer).
+To see all the original files during development, use http://host:port/development.html.
+
 ## Small JS styleguide for the project
 
 - 2 spaces for indentation
