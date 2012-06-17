@@ -7,11 +7,11 @@
 
 - Configure the ports for the application (for multiple environments: dev, test, production) and also the settings for the MongoDB connection (you can either host MongoDB locally or try a free hosting provider such as MongoLab). The config data is in /config
 - Start the server:
-
+  
   a) Production
 
-    npm start
-
+    npm start 
+  
   b) Development (note that if you want to load all the files uncompressed you should visit http://&lt;server&gt;:&lt;port&gt;/dev.html):
 
     node app.js
@@ -53,7 +53,10 @@ Compress & concatenate assets (one file for JS & one file for CSS):
 
 ## Testing
 
-I've chosen Mocha for all tests in this project. To run unit tests & function tests use 'npm test' in the application root (make sure things are setup properly -> the app can connect to MongoDB, can bind to the specified port).
+I've chosen Mocha for all tests in this project. To run test suite in the command line use the following command in the application root (make sure things are setup properly -> the app can connect to MongoDB, can bind to the specified port):
+
+    npm test
+
 If you're testing on Windows, run the following commands in the terminal: 
 
     npm install mocha@1.1.0 -g
