@@ -16,7 +16,8 @@
       "mongoose"        : "2.5.x",
       "uglify-js"       : "1.2.x",
       "underscore"      : "*",
-      "gzippo"          : "0.1.4"
+      "gzippo"          : "0.1.4",
+      "requirejs"       : "2.0.2"
     },
     "devDependencies": {
       "mocha"   : "1.1.x",

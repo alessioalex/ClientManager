@@ -1,9 +1,21 @@
 ## Quick start
 
 - Make sure Node.js and NPM should be installed (I prefer to do it using NVM). This project was developed on Node 0.6.x.
-- Install dependencies with NPM: "npm install ." in the project root
+- Install project dependencies with NPM by running the following command in the terminal (project root): 
+
+    npm install .
+
 - Configure the ports for the application (for multiple environments: dev, test, production) and also the settings for the MongoDB connection (you can either host MongoDB locally or try a free hosting provider such as MongoLab). The config data is in /config
-- Run 'npm start' or 'NODE_ENV=production node app.js' to start the server
+- Start the server:
+
+  a) Production
+
+    npm start
+
+  b) Development (note that if you want to load all the files uncompressed you should visit http://&lt;server&gt;:&lt;port&gt;/dev.html):
+
+    node app.js
+
 
 ## App structure
 
@@ -23,20 +35,35 @@ Frontend:
 - '/css' and '/img' stores the static stylesheets and images needed
 - '/test' has the logic for the test runner (with Mocha), and specs
 
-## Dev gotchas with Jake
+## Dev gotchas with Jake (in the terminal)
 
-You can empty the database by running 'jake db:empty' and populate it with data by running 'jake db:populate[20]' for ex (that will empty db and insert 20 new records).
+Empty the database:
+
+    jake db:empty
+
+Populate database with data:
+    
+    jake db:populate[20]
+
+That will empty db and insert 20 new records).
+
+Compress & concatenate assets (one file for JS & one file for CSS):
+
+    jake app:assets
 
 ## Testing
 
 I've chosen Mocha for all tests in this project. To run unit tests & function tests use 'npm test' in the application root (make sure things are setup properly -> the app can connect to MongoDB, can bind to the specified port).
-If you're testing on Windows, install Mocha globally: 'npm install mocha@1.1.0 -g' and run 'mocha --ui bdd --recursive --reporter spec --timeout 10000 --slow 300' instead.
-For client side tests, open 'http://server:port/test'.
+If you're testing on Windows, run the following commands in the terminal: 
 
-## Build
+    npm install mocha@1.1.0 -g
+    mocha --ui bdd --recursive --reporter spec --timeout 10000 --slow 300
 
-I've concatenated and minified the css into a single file and the JS into 2 files: one file that contains libraries (such as jQuery, underscore etc.. including RequireJS) and another file that includes all the RequireJS modules (minified and concatenated with r.js, the RequireJS optimizer).
-To see all the original files during development, use http://host:port/development.html.
+The first command installs mocha globally and the second one runs the test suite.
+
+For client side tests, open the browser 
+
+    http://<server>:<port>/test
 
 ## Small JS styleguide for the project
 
@@ -49,15 +76,13 @@ To see all the original files during development, use http://host:port/developme
 
 ## Browser compatibility
 
-I haven't had time to properly test the app, but it should work fine in modern browsers.
+I haven't had time to properly test the app, but it *should* work fine in modern browsers.
 
 ## TODO / Improvements:
 
 Client-side:
 
-- Compress & concatenate JS & CSS (each into single file, using build script)
 - Add popups after deleting / saving client
-- Put each template into an element with an id, concatenate them (using a build script) into a single HTML file which is fetched at startup and export the object containing them (this way there's only 1 request instead of <number of templates> requests, they are kept out of the main html file and each into their own files during development).
 - More tests
 
 Server-side:
@@ -66,7 +91,7 @@ Server-side:
 - Split contents of utils.js into multiple files (more specific categories)
 - Implement content-negotiation (return 406 Not Acceptable where needed)
 [this is present by default in Express 3.x, upgrade when it is stable enough]
-- Implement authentication and check authorization when modifying resources
+- Implement authentication and check authorization when modifying resources (OAuth maybe?)
 - Implement ETags properly for the /clients and /clients/:id GET routes
 
 ## Useful links that helped me while developing this app

@@ -12,12 +12,13 @@
  * To run a task with params do:
  * jake db:populate[20]
  */
-var mongoose    = require('mongoose'),
-    colors      = require('colors'),
-    faker       = require('./vendor/faker'),
-    log         = console.log,
-    ENV         = process.env.NODE_ENV || 'development';
-    JK          = {};
+var mongoose     = require('mongoose'),
+    colors       = require('colors'),
+    faker        = require('./vendor/faker'),
+    assetBuilder = require('./lib/assetBuilder'),
+    log          = console.log,
+    ENV          = process.env.NODE_ENV || 'development';
+    JK           = {};
 
 JK.abortIfProduction = function() {
   if (ENV === 'production') {
@@ -36,6 +37,18 @@ task('init', [], function() {
     });
   }
 }, { async: true });
+
+namespace('app', function() {
+
+  desc('Compress JS & CSS and make 1 JS && 1 CSS file. Run this before deploying to production.');
+  task('assets', [], function(done) {
+    assetBuilder(function() {
+      log('- packed up JS & CSS files'.yellow);
+      complete();
+    });
+  }, { async: true });
+
+});
 
 namespace('db', function() {
 

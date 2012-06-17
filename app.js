@@ -22,9 +22,6 @@ utils.loadConfig(__dirname + '/config', function(config) {
       app.use(gzippo.compress());
     });
     app.use(express.favicon());
-    utils.ifEnv('production', function() {
-      app.use(express.staticCache());
-    });
     app.use(express['static'](__dirname + '/public'));
     app.use(express.bodyParser());
     app.use(express.methodOverride());

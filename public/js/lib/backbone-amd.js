@@ -1428,4 +1428,8 @@
     throw new Error('A "url" property or function must be specified');
   };
 
+  if ( typeof define === "function" && define.amd ) {
+    define("backbone", [], function () { return Backbone.noConflict(); } );
+  }
+
 }).call(this);

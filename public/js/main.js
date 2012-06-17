@@ -12,18 +12,18 @@ requirejs.config({
       exports: 'bootstrap'
     }
   },
-  // remove paths when optimizing {
+  /**
+   * HACK:
+   * Modified Underscore and Backbone to be AMD compatible (define themselves)
+   * since it didn't work properly with the RequireJS shim when optimizing
+   */
   paths: {
-    'text'       : 'lib/text',
-    'jquery'     : [
-        'http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min',
-        // If the CDN location fails, load from this location
-        'lib/jquery.min'
-    ],
-    'underscore'       : 'lib/underscore.min',
-    'backbone'         : 'lib/backbone.min',
-    'bootstrap'        : 'lib/bootstrap.min',
-    'moment'           : 'lib/moment.min',
+    'text'             : 'lib/text',
+    'jquery'           : 'lib/jquery',
+    'underscore'       : 'lib/underscore-amd',
+    'backbone'         : 'lib/backbone-amd',
+    'bootstrap'        : 'lib/bootstrap',
+    'moment'           : 'lib/moment',
     'Mediator'         : 'lib/mediator',
     'App'              : 'app',
     'Router'           : 'router',
@@ -35,7 +35,6 @@ requirejs.config({
     'ClientEditView'   : 'views/clients/edit',
     'ClientView'       : 'views/clients/show'
   }
-  // } end remove paths
 });
 
 require(['App'], function(App, Client) {
