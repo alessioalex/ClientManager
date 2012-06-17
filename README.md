@@ -1,3 +1,10 @@
+## What's this?
+
+ClientManager is a sample CRUD application build with Backbone, RequireJS (2.0) and Twitter Bootstrap on the frontend. The backend part of the application uses Express.js and Mongoose (amongst other libraries).
+
+<img src="https://github.com/alessioalex/ClientManager/raw/master/files/add_client.png" border="0" />
+<img src="https://github.com/alessioalex/ClientManager/raw/master/files/client_list.png" border="0" />
+
 ## Quick start
 
 - Make sure Node.js and NPM should be installed (I prefer to do it using NVM). This project was developed on Node 0.6.x.
@@ -7,11 +14,11 @@
 
 - Configure the ports for the application (for multiple environments: dev, test, production) and also the settings for the MongoDB connection (you can either host MongoDB locally or try a free hosting provider such as MongoLab). The config data is in /config
 - Start the server:
-  
+
   a) Production
 
     npm start 
-  
+
   b) Development (note that if you want to load all the files uncompressed you should visit http://&lt;server&gt;:&lt;port&gt;/dev.html):
 
     node app.js
