@@ -102,7 +102,12 @@ namespace('db', function() {
     var Client;
 
     log('- db:populate'.yellow);
-
+     if (!JK.models) {
+      JK.models = {};
+      ['client'].forEach(function (elem, index) {
+        JK.models[elem] = require('./app/models/' + elem)(JK.mongoose);
+      });
+    }
     Client  = JK.models.client;
     howMany = howMany || 50;
 
