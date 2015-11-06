@@ -1,5 +1,6 @@
 module.exports = function(mongoose) {
   var validator = require('../../lib/validator'),
+      mongoose  = require('mongoose'),
       Schema    = mongoose.Schema,
       Client;
 

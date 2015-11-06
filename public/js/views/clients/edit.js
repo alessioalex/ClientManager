@@ -70,6 +70,7 @@ define('ClientEditView', [
             that.renderErrMsg(res.errors);
           } else {
             model.trigger('save-success', model.get('_id'));
+            window.alert("Client informations updated ");
           }
         },
         error: function(model, res) {
