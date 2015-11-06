@@ -30,6 +30,7 @@ define('ClientView', [
         sync: true,
         success: function(model) {
           model.trigger('delete-success');
+          window.alert("Client deleted ");
         },
         error: function(model, res) {
           if (res.status === 404) {
